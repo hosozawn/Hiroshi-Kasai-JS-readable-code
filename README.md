@@ -1,0 +1,1 @@
+# Hiroshi-Kasai-JS-readable-code
