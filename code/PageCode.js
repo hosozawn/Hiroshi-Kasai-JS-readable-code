@@ -1,5 +1,7 @@
 class PageCode {
 
+  static DICTIONARY_DATA_JSON = "dictionary-data.json";
+
   constructor() {
   }
 
@@ -7,7 +9,7 @@ class PageCode {
    * 仕様1実行
    */
   execSpec1 = function () {
-    window.console.log("上手");
+    window.console.log(WORD1);
   }
 }
 
