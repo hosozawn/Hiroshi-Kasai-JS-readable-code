@@ -1,17 +1,27 @@
 class PageCode {
 
-  static DICTIONARY_DATA_JSON = "dictionary-data.json";
-
-  constructor() {
+  exec() {
+    this.addEventListeners()
   }
 
-  /**
-   * 仕様1実行
-   */
-  execSpec1 = function () {
-    window.console.log(WORD1);
+  addEventListeners() {
+    document.getElementById("dictionaryInput").addEventListener("change", (e) => {
+      this.readDictionaries(e.target.files)
+    })
+  }
+
+  readDictionaries(files) {
+    [...files].forEach(file => this.readDictionary(file))
+  }
+
+  readDictionary(file) {
+    const reader = new FileReader()
+    reader.addEventListener("load", function() {
+      document.getElementById("words").innerText = this.result
+    })
+    reader.readAsText(file)
   }
 }
 
 page = new PageCode();
-page.execSpec1();
+page.exec();
